@@ -1,0 +1,13 @@
+from math import *
+
+f = SUB(sin, cos)
+print(f(12), sin(12)-cos(12))
+
+g = DIV(sin, cos)
+print(g(pi/6), tan(pi/6))
+
+h = MUL(exp, 0.1)
+print(h(2), e**2/10)
+
+t = ADD(lambda s: len(s), sum)
+print(t(range(5)))

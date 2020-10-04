@@ -1,0 +1,1 @@
+print(No_2Zero(6, 3))
