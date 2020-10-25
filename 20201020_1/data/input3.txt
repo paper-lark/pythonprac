@@ -1,0 +1,7 @@
+from random import randrange, seed
+from itertools import islice, repeat
+seed(100500)
+
+I=(repeat(randrange(1,5), randrange(5, 15)) for i in range(100000))
+P = 477700
+print(*islice(YinYang(*I), P, P+100, 7))

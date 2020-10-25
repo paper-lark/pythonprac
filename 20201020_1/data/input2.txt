@@ -1,0 +1,1 @@
+print(*list(YinYang(range(1, 10))))

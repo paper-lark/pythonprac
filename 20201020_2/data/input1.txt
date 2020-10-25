@@ -1,0 +1,6 @@
+if __name__ == '__main__':
+    pi = 0
+    for j, pi in enumerate(PiGen()):
+        if j > 120:
+            break
+    print(str(pi)[1400:1470])
