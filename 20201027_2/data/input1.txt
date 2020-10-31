@@ -1,0 +1,12 @@
+def main():
+    M, N = Nuts(), Nuts(1, 2, 3, 4)
+    print(M, N)
+    M[100] = N.qwerty = 42
+    print(M[100], N.qwerty)
+    print(*list(Nuts("QWERQWERQWER")))
+    del M["QQ"], N[6:10], M[...], N._
+    print(M.asdfg, N[-2])
+
+
+if __name__ == '__main__':
+    main()

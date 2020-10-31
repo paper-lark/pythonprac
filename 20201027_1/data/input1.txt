@@ -1,0 +1,16 @@
+class C:
+    x, y, z = 1, 3, 5
+
+    def X(self): return self.x
+    def Y(self): return self.y
+
+    def __init__(self, dx, dy, dz):
+        self.x = dx
+        self.Y = dy
+        self.Z = dz
+
+cm, cf, om, of = fcounter(C, 6, 7, 8)
+print("Class: methods", *cm)
+print("Class: fields", *cf)
+print("Object: methods", *om)
+print("Object: fields", *of)

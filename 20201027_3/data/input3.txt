@@ -1,0 +1,13 @@
+def main():
+    import random, string
+    random.seed(100500)
+    A, B = (Spiral("".join(sorted(random.choices(string.ascii_letters, k=100)))) for i in range(2))
+    print(A)
+    print(B)
+    print(A + B)
+    print(A - B)
+    print(B - A)
+
+
+if __name__ == '__main__':
+    main()

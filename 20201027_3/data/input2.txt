@@ -1,0 +1,13 @@
+def main():
+    S = Spiral("abbcccddddeeeee")
+    I = Spiral("abcdefghi")
+    print(f"{S}\n")
+    print(S + I, "\n")
+    print(S - I, "\n")
+    print(I * 2, "\n")
+    print(I * 2 - S, "\n")
+    print(*list(S + I))
+
+
+if __name__ == '__main__':
+    main()

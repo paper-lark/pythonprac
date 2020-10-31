@@ -1,0 +1,13 @@
+def main():
+    s1 = Spiral('1112223333344')
+    s2 = Spiral('123')
+    print(*list(s1 + s2))
+    print(*list(s2 + s1))
+    print(*list(s2 * 2))
+    print(*list(s1 - s2 * 3))
+    print(len(s1))
+    print(s1 * 2)
+
+
+if __name__ == '__main__':
+    main()
