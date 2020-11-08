@@ -1,0 +1,3 @@
+(\w)+(@+)?(?P<nonalpha>\W+)--(\w+)
+^_^awww-----foo;_;
+#$qwer@@@--wqer#$
