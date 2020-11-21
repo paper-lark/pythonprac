@@ -1,0 +1,31 @@
+
+@TypeCheck((int, str, int), int)
+def valid(a, b, c=0):
+    return len(b * (a + 1)) + c
+
+
+@TypeCheck([int, int], str)
+def invalid(a, b):
+    return a / b if a % 2 else a * b
+
+
+@TypeCheck((int, int, str), int)
+def variable(*args, a=10, **kwargs):
+    return len(args) + len(kwargs)
+
+
+if __name__ == '__main__':
+    valid(10, '10')  # OK
+    valid(10, '10', 10)  # OK
+    valid(10, '10', 10, 10)  # Wrong count
+    valid(10)  # Wrong count
+    valid(10, 10)  # Wrong arg 1
+    valid(10, '10', c=1.0)  # Wrong arg 'c'
+    invalid(10, 10)  # Wrong return type
+    variable(10, a=10, b='10')  # OK
+    variable(10, b='10')  # OK
+    variable(b=10, c='20')  # OK
+    variable(10, 10, a='10')  # OK
+    variable(b=20, c=20)  # Wrong arg 'c'
+    variable(10, 10)  # Wrong arg 'a'
+    variable(10)  # Wrong count

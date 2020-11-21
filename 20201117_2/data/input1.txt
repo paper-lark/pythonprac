@@ -1,0 +1,18 @@
+@Stat
+class C:
+    A, B = 3, 4
+    def __init__(self, a=None):
+        if a:
+            self.A = a
+
+def main():
+    c, d = C(), C(123)
+    print(Stat(c, "A"), Stat(d, "A"))
+    d.A = c.A * 2 + c.B
+    c.B = d.A - 1 - len([d.B, d.B, d.B])
+    print(Stat(c, "A"), Stat(c, "B"))
+    print(Stat(d, "A"), Stat(d, "B"))
+
+
+if __name__ == '__main__':
+    main()

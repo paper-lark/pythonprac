@@ -1,0 +1,16 @@
+@Stat
+class C:
+    A = 3
+
+
+def main():
+    c, d = C(), C()
+    print(c.A, Stat(c, 'A'), Stat(d, 'A'))
+    c.A = 10
+    print(c.A, Stat(c, 'A'), Stat(d, 'A'))
+    d.A = c.A * 2
+    print(d.A, Stat(c, 'A'), Stat(d, 'A'))
+
+
+if __name__ == '__main__':
+    main()
