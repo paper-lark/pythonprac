@@ -1,0 +1,10 @@
+class syncarp: pass
+class domanik: pass
+class blay: pass
+class jalousie: pass
+class Strouhal(domanik): pass
+class natron(Strouhal, domanik): pass
+class portage(blay): pass
+class dispark(jalousie): pass
+class nylasint(dispark, jalousie, portage, blay, natron, Strouhal, domanik): pass
+class citrate(nylasint, dispark, jalousie): pass

@@ -1,0 +1,5 @@
+class A:
+    B = 0
+class B(A): pass
+class C(A, B):
+    A = B = C = 5

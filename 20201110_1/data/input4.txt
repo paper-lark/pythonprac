@@ -1,0 +1,10 @@
+class Blunden: pass
+class Prudy: pass
+class stannoll: pass
+class beta: pass
+class snuffed(Prudy, Blunden): pass
+class puzzolan(snuffed, stannoll, Blunden): pass
+class asthenic(beta, Blunden): pass
+class sceptre(asthenic, beta, stannoll): pass
+class undoings(sceptre, beta, snuffed, stannoll, Blunden): pass
+class luring(sceptre, asthenic, puzzolan, snuffed, stannoll, Blunden): pass
