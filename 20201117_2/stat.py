@@ -1,4 +1,5 @@
 from collections import Counter
+from functools import partial, update_wrapper, wraps
 from typing import Optional, Tuple, Union, Any
 
 
@@ -38,7 +39,8 @@ def Stat(target: object, field: Optional[str] = None) -> Union[Tuple[int, int], 
     fields_to_watch = [k for k in vars(target) if not k.startswith('_')]
     for field in fields_to_watch:
         initial = getattr(target, field)
-        setattr(target, field, Desc(field, initial))
+        if not callable(initial):
+            setattr(target, field, Desc(field, initial))
 
     original_init = target.__init__
 

@@ -4,6 +4,7 @@ import inspect
 
 
 def TypeCheck(arg_types: Union[Generator[Type, None, None], Sequence[Type]], return_type: Type):
+    arg_types = list(arg_types)
     def decorator(f: Callable):
         spec = inspect.getfullargspec(f)
         key_to_position = {name: pos for pos, name in enumerate(spec.args)}
@@ -24,13 +25,13 @@ def TypeCheck(arg_types: Union[Generator[Type, None, None], Sequence[Type]], ret
 
             # check parameter quantity
             if len(args) + len(kwargs) != len(arg_types):
-                raise TypeError(f'Function variable must have {len(arg_types)} arguments')
+                raise TypeError(f'Function {f.__name__} must have {len(arg_types)} arguments')
 
             # check positional args
             for i, value in enumerate(args):
                 expected_type = arg_types[i]
                 if type(value) != expected_type:
-                    raise TypeError(f'Type of argument {i} is not {expected_type}')
+                    raise TypeError(f'Type of argument {i+1} is not {expected_type}')
 
             # check named args
             for key, value in kwargs.items():
